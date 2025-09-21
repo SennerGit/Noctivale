@@ -3,6 +3,7 @@ package net.sen.noctivale.data.recipes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.world.item.Items;
 import net.sen.noctivale.common.registries.*;
 
 import java.util.concurrent.CompletableFuture;
@@ -17,32 +18,37 @@ public class ModRecipeProvider extends ModRecipeHelper {
     }
 
     @Override
-    void miscRecipes(RecipeOutput pRecipeOutput) {
+    void miscRecipes(RecipeOutput recipeOutput) {
 
     }
 
     @Override
-    void stoneRecipes(RecipeOutput pRecipeOutput) {
+    void pestleAndMotarRecipes(RecipeOutput recipeOutput) {
+        this.pestalAndMotorRecipe(recipeOutput, Items.BONE, Items.BONE_MEAL);
+    }
+
+    @Override
+    void stoneRecipes(RecipeOutput recipeOutput) {
 
     }
 
     @Override
-    void foodRecipes(RecipeOutput pRecipeOutput) {
+    void foodRecipes(RecipeOutput recipeOutput) {
 
     }
 
     @Override
-    void metalRecipes(RecipeOutput pRecipeOutput) {
+    void metalRecipes(RecipeOutput recipeOutput) {
 
     }
 
     @Override
-    void woodRecipes(RecipeOutput pRecipeOutput) {
+    void woodRecipes(RecipeOutput recipeOutput) {
 
     }
 
     @Override
-    void flowerRecipes(RecipeOutput pRecipeOutput) {
+    void flowerRecipes(RecipeOutput recipeOutput) {
 
     }
 

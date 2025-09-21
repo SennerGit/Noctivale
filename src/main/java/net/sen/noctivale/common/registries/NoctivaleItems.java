@@ -9,7 +9,6 @@ import net.minecraft.world.level.block.StandingSignBlock;
 import net.minecraft.world.level.block.WallHangingSignBlock;
 import net.minecraft.world.level.block.WallSignBlock;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.sen.noctivale.common.item.DrawingKnifeItem;
 import net.sen.noctivale.common.utils.ModUtils;
@@ -21,25 +20,30 @@ public class NoctivaleItems {
     private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ModUtils.getModId());
 
     public static final Supplier<Item> DRAWING_KNIFE = createItem("drawing_knife", DrawingKnifeItem::new);
+    public static final Supplier<Item> PESTLE_AND_MORTAR = createItem("pestle_and_mortar", new Item.Properties().stacksTo(1));
 
-    private static DeferredItem<Item> createItem(String name) {
+    private static Supplier<Item> createItem(String name) {
         return ITEMS.register(name, () -> new Item(new Item.Properties()));
     }
 
-    private static DeferredItem<Item> createFood(String name, FoodProperties foodProperties) {
-        return ITEMS.register(name, () -> new Item(new Item.Properties().food(foodProperties)));
-    }
-
-    private static <T extends Item> DeferredItem<T> createItem(String name, Supplier<T> item) {
+    private static <T extends Item> Supplier<T> createItem(String name, Supplier<T> item) {
         return ITEMS.register(name, item);
     }
 
+    private static Supplier<Item> createItem(String name, Item.Properties properties) {
+        return createItem(name, () -> new Item(properties));
+    }
+
+    private static Supplier<Item> createFood(String name, FoodProperties foodProperties) {
+        return createItem(name, new Item.Properties().food(foodProperties));
+    }
+
     private static Supplier<Item> createSignItem(String name, Supplier<StandingSignBlock> sign, Supplier<WallSignBlock> wallSign) {
-        return ITEMS.register(name.toLowerCase(Locale.ROOT), () -> new SignItem(new Item.Properties().stacksTo(16), sign.get(), wallSign.get()));
+        return createItem(name.toLowerCase(Locale.ROOT), () -> new SignItem(new Item.Properties().stacksTo(16), sign.get(), wallSign.get()));
     }
 
     private static Supplier<Item> createHangingSignItem(String name, Supplier<CeilingHangingSignBlock> sign, Supplier<WallHangingSignBlock> wallSign) {
-        return ITEMS.register(name.toLowerCase(Locale.ROOT), () -> new HangingSignItem(sign.get(), wallSign.get(),new Item.Properties().stacksTo(16)));
+        return createItem(name.toLowerCase(Locale.ROOT), () -> new HangingSignItem(sign.get(), wallSign.get(),new Item.Properties().stacksTo(16)));
     }
 
     public static void register(IEventBus eventBus) {

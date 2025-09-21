@@ -35,6 +35,10 @@ public abstract class ModBlockStateHelper extends BlockStateProvider {
         simpleBlockItem((Block) blockRegistryObject.get(), new ModelFile.UncheckedModelFile(ModUtils.getModPath("block/" + ModUtils.getBlockId((Block) blockRegistryObject.get()))));
     }
 
+    protected void simpleBlock(Supplier<Block> blockRegistryObject) {
+        simpleBlock(blockRegistryObject.get());
+    }
+
     protected void blockItem(Supplier<?> blockRegistryObject, String appendix) {
         simpleBlockItem((Block) blockRegistryObject.get(), new ModelFile.UncheckedModelFile(ModUtils.getModPath("block/" + ModUtils.getBlockId((Block) blockRegistryObject.get()) + appendix)));
     }

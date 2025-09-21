@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "noctivale:solvent_extractor"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "noctivale:blocks/solvent_extractor"
+}

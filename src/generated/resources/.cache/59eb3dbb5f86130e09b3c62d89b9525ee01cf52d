@@ -1,1 +1,12 @@
-// 1.21.1	2025-08-25T07:44:49.552514	Loot Tables
+// 1.21.1	2025-09-17T17:49:20.3314224	Loot Tables
+4d051b1a90748a5167442e15ecf8fdad180b31e6 data/noctivale/loot_table/blocks/chemical_synthesizer.json
+12aa682c7d00c0ca351218bcb29c2c0150f64dc9 data/noctivale/loot_table/blocks/distillation_apparatus.json
+7a901342deea3212f38acd0aeaac0fdf1cc1f94d data/noctivale/loot_table/blocks/laboratory_counter.json
+f6b879c76620d165caffa24937cc13ae4bafdff7 data/noctivale/loot_table/blocks/laboratory_jar.json
+15f371f2e0dc48ed0871a28c6915bc7a9e0811e7 data/noctivale/loot_table/blocks/laboratory_shelf.json
+71e005d660d59f41226d4f012f1cfb90b9c77fdb data/noctivale/loot_table/blocks/laboratory_sink.json
+8c82553ef6f33c3970b3b1ba7b7a3ccef7d37b12 data/noctivale/loot_table/blocks/operating_table.json
+fc79f3531f0623cb6d43ea73beec7dfd8c890ce0 data/noctivale/loot_table/blocks/pipe_block.json
+471a6b252ec89d8607dbe70caff339ee39cab998 data/noctivale/loot_table/blocks/solvent_extractor.json
+fed5a6912ab964d5602fb723d7b550e5666a420d data/noctivale/loot_table/blocks/study_table.json
+7e51dffa270b7796af5b3a7ad4bff455d048117f data/noctivale/loot_table/blocks/test_tube_rack.json

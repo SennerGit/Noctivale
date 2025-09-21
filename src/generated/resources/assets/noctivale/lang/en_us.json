@@ -1,4 +1,19 @@
 {
+  "block.noctivale.blood_marker_block": "Blood Marker",
+  "block.noctivale.chemical_synthesizer": "Chemical Synthesizer",
+  "block.noctivale.distillation_apparatus": "Distillation Apparatus",
+  "block.noctivale.laboratory_counter": "Laboratory Counter",
+  "block.noctivale.laboratory_jar": "Laboratory Jar",
+  "block.noctivale.laboratory_shelf": "Laboratory Shelf",
+  "block.noctivale.laboratory_sink": "Laboratory Sink",
+  "block.noctivale.operating_table": "Operating Table",
+  "block.noctivale.pipe_block": "Pipe",
+  "block.noctivale.solvent_extractor": "Solvent Extractor",
+  "block.noctivale.study_table": "Study Table",
+  "block.noctivale.test_tube_rack": "Test Tube Rack",
   "item.noctivale.drawing_knife": "Drawing Knife",
+  "item.noctivale.pestle_and_mortar": "Pestle and Mortar",
+  "item.noctivale.test_tube": "Test Tube",
+  "item.noctivale.test_tube_water": "Test Tube Water",
   "itemgroup.noctivale.noctivale_tab": "Noctivale Tab"
 }

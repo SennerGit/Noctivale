@@ -35,10 +35,14 @@ public class Noctivale {
 
         NoctivaleBlocks.register(eventBus);
         NoctivaleItems.register(eventBus);
+        NoctivaleTestTubeItems.register(eventBus);
         NoctivaleBlockEntities.register(eventBus);
         NoctivaleEntityTypes.register(eventBus);
         NoctivaleArmourMaterials.register(eventBus);
         NoctivaleCreativeModeTabs.register(eventBus);
+        NoctivaleDataComponents.register(eventBus);
+        NoctivaleMenuTypes.register(eventBus);
+        NoctivaleRecipes.register(eventBus);
 
         eventBus.addListener(this::commonSetup);
         NeoForge.EVENT_BUS.register(this);

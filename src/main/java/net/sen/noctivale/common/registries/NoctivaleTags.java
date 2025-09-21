@@ -18,6 +18,7 @@ public class NoctivaleTags {
         private static TagKey<Block> createTag(String name) { return TagKey.create(Registries.BLOCK, ModUtils.getModPath(name)); }
     }
     public static class Items {
+        public static final TagKey<Item> BULLETS = createTag("bullets");
         private static TagKey<Item> createTag(String name) { return TagKey.create(Registries.ITEM, ModUtils.getModPath(name)); }
     }
     public static class EntityTypes {

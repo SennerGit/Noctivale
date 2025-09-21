@@ -6,19 +6,27 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
+import net.minecraft.core.component.DataComponentType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.client.event.ComputeFovModifierEvent;
 import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.sen.noctivale.Noctivale;
+import net.sen.noctivale.common.event.NoctivaleEventHandler;
+import net.sen.noctivale.common.item.TestTubeItem;
+import net.sen.noctivale.common.item.TestTubeWaterItem;
+import net.sen.noctivale.common.registries.NoctivaleCreativeModeTabs;
+import net.sen.noctivale.common.registries.NoctivaleDataComponents;
+import net.sen.noctivale.common.registries.NoctivaleTestTubeItems;
 
 public class NoctivaleClientEventHandler {
     public static void NoctivaleClientEventHandlerRegistry(IEventBus eventBus) {
         eventBus.addListener(NoctivaleClientEventHandler::registerOverlays);
-
     }
 
     private static void registerOverlays(RegisterGuiLayersEvent event) {

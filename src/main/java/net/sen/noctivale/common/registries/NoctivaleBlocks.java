@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.sen.noctivale.Noctivale;
+import net.sen.noctivale.common.block.*;
 import net.sen.noctivale.common.utils.ModUtils;
 
 import java.util.Locale;
@@ -24,17 +24,48 @@ public class NoctivaleBlocks {
     private static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(ModUtils.getModId());
     private static final DeferredRegister.Items BLOCK_ITEMS = DeferredRegister.createItems(ModUtils.getModId());
 
+    //Used in rituals
+    public static final Supplier<Block> BLOOD_MARKER_BLOCK = createBlock("blood_marker_block", BloodMarkerBlock::new);
+
+    /*
+        * Laboratory Blocks
+     */
+    //Extracts chemicals from powders
+    public static final Supplier<Block> SOLVENT_EXTRACTOR = createBlock("solvent_extractor", SolventExtractorBlock::new);
+    //Allows test tubes to interact with the world
+    public static final Supplier<Block> TEST_TUBE_RACK = createBlock("test_tube_rack", TestTubeRackBlock::new);
+    //Splits chemical solutions into different components and extracts those that evaporate
+    public static final Supplier<Block> DISTILLATION_APPARATUS = createBlock("distillation_apparatus", DistillationApparatusBlock::new);
+    //Combines chemicals into solutions
+    public static final Supplier<Block> CHEMICAL_SYNTHESIZER = createBlock("chemical_synthesizer", ChemicalSynthesizerBlock::new);
+    //A table used for injecting chemicals and performing surgery onto subjects
+    public static final Supplier<Block> OPERATING_TABLE = createBlock("operating_table");
+    //A jar used to store specimens and samples
+    public static final Supplier<Block> LABORATORY_JAR = createBlock("laboratory_jar");
+
+    /*
+    * Furniture
+     */
+    public static final Supplier<Block> LABORATORY_COUNTER = createBlock("laboratory_counter");
+    public static final Supplier<Block> LABORATORY_SHELF = createBlock("laboratory_shelf");
+    public static final Supplier<Block> LABORATORY_SINK = createBlock("laboratory_sink");
+
+    /*
+    * Utility
+     */
+    public static final Supplier<Block> STUDY_TABLE = createBlock("study_table");
+
+    /*
+    * PIPES
+     */
+    public static final Supplier<Block> PIPE_BLOCK = createBlock("pipe_block");
 
     private static Supplier<Block> createBlock(String name) {
-        Supplier<Block> toReturn = BLOCKS.register(name.toLowerCase(Locale.ROOT), () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
-        createBlockItem(name.toLowerCase(Locale.ROOT), toReturn);
-        return toReturn;
+        return createBlock(name.toLowerCase(Locale.ROOT), () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
     }
 
     private static Supplier<Block> createBlock(String name, BlockBehaviour.Properties properties) {
-        Supplier<Block> toReturn = BLOCKS.register(name.toLowerCase(Locale.ROOT), () -> new Block(properties));
-        createBlockItem(name.toLowerCase(Locale.ROOT), toReturn);
-        return toReturn;
+        return createBlock(name.toLowerCase(Locale.ROOT), () -> new Block(properties));
     }
 
     private static Supplier<Block> createBlock(String name, RotatedPillarBlock block) {
